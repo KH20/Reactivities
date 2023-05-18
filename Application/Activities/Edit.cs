@@ -28,6 +28,7 @@ namespace Application.Activities
                 
                 activity.Category = request.Activity.Category ?? activity.Category; 
                 activity.Title = request.Activity.Title ?? activity.Title;
+                activity.Date = request.Activity.Date;
 
                 await this.context.SaveChangesAsync();
 
