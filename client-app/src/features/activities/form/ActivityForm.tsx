@@ -3,7 +3,7 @@ import { Activity } from "../../../app/models/activity";
 import { Button, Form, Segment } from "semantic-ui-react";
 
 interface Props {
-    activity: Activity;
+    activity: Activity | undefined;
 }
 
 export default function ActivityForm({ activity }: Props) {

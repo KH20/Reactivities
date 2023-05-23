@@ -4,9 +4,10 @@ import { Button, Item, Label, Segment } from "semantic-ui-react";
 
 interface Props {
     activities: Activity[];
+    selectActivity: (id: string) => void;
 }
 
-export default function ActivityList({ activities }: Props) {
+export default function ActivityList({ activities, selectActivity }: Props) {
     return (
         <Segment>
             <Item.Group divided>
@@ -24,6 +25,7 @@ export default function ActivityList({ activities }: Props) {
                                     floated="right"
                                     content="View"
                                     color="blue"
+                                    onClick={() => selectActivity(activity.id)}
                                 />
                                 <Label basic content={activity.category} />
                             </Item.Extra>
