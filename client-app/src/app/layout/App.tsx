@@ -15,9 +15,16 @@ function App() {
 
     useEffect(() => {
         //On component load
+
+        //Get activities, and set activities state
         agent.Activities.list().then((response) => {
-            //Get activities, and set activities state
-            setActivities(response);
+            let activities: Activity[] = [];
+            response.forEach((activity) => {
+                activity.date = activity.date.split("T")[0];
+                activities.push(activity);
+            });
+
+            setActivities(activities);
         });
     }, []);
 
