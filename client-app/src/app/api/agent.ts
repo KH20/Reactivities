@@ -3,6 +3,7 @@ import axios, { AxiosResponse } from "axios";
 axios.defaults.baseURL = "http://localhost:50000/api";
 
 const responseBody = (response: AxiosResponse) => response.data;
+
 const requests = {
     get: (url: string) => axios.get(url).then(responseBody),
     post: (url: string, body: {}) => axios.post(url, body).then(responseBody),
